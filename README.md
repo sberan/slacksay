@@ -1,5 +1,7 @@
 ##A slack bot to audibly speak each message that is typed
 
+This is terrible, don't use it
+
 ##Installation
   `npm install -g slacksay`
 

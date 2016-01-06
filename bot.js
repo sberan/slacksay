@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var token = process.argv[2];
 var Botkit = require('botkit');
 var controller = Botkit.slackbot();
@@ -8,8 +9,8 @@ var quote = require('shell-quote').quote;
 
 if (!token) {
   console.log(`
-    error: invalid TOKEN specified. Obtain a test API token from https://api.slack.com/web
-    usage: npm start -- TOKEN
+    slacksay: invalid TOKEN specified. Obtain a test API token from https://api.slack.com/web
+    usage: slacksay TOKEN
   `)
   return 1;
 }

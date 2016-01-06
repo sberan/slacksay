@@ -3,17 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bot.js"
-  },
-  "author": "",
+  "bin" : { "slacksay" : "./bot.js" },
+  "author": "Sam Beran",
   "license": "ISC",
   "dependencies": {
     "botkit": "0.0.5",
     "executive": "^1.1.3",
     "q": "^1.4.1",
-    "say": "^0.6.0",
     "shell-quote": "^1.4.3"
   }
 }

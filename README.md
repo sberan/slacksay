@@ -9,6 +9,10 @@ This is terrible, don't use it
   `slacksay TOKEN`
   TOKEN can be obtained from https://api.slack.com/web
 
+  `slacksay TOKEN -t 4`
+  Sets the max time a single message will speak. Default: 6 seconds
+
+
 ##TODO
  * [ ] make electron app
  * [ ] make cross-platform (currently mac only)

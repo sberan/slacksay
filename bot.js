@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 var token = process.argv[2];
+var maxSpeakingTimeInSeconds = 6;
 var Botkit = require('botkit');
 var controller = Botkit.slackbot();
 var bot = controller.spawn({ token })
@@ -13,6 +14,10 @@ if (!token) {
     usage: slacksay TOKEN
   `)
   return 1;
+}
+
+if(process.argv.indexOf("-t") != -1){
+    maxSpeakingTimeInSeconds = process.argv[process.argv.indexOf("-t") + 1];
 }
 
 bot.startRTM(function(err) {
@@ -52,7 +57,7 @@ controller.hears(".*", ["direct_message","direct_mention","mention","ambient"], 
 
       const commands = [
         quote(['say', '--output-file', 'out.aiff', '--voice', 'Daniel', text]),
-        'afplay --volume .7 --rate 1.2 --time 6 out.aiff',
+        `afplay --volume .7 --rate 1.2 --time ${maxSpeakingTimeInSeconds} out.aiff`,
         'rm out.aiff'
       ]
 
